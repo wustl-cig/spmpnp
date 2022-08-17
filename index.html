@@ -28,20 +28,19 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
     <h2>Plug-and-Play Methods for Integrating Physical and Learned Models in Computational Imaging</h2>
-    <p class="abstract"><b>IEEE Signal Processing Magazine Tutorial on Plug-and-Play Methods</b></p>
+    <p class="abstract"><b>IEEE Signal Processing Magazine tutorial on Plug-and-Play Methods</b></p>
     <hr>
     <p class="authors">
-        <a href="https://engineering.wustl.edu/faculty/Ulugbek-Kamilov.html"> Ulugbek S. Kamilov<sup>1,2</sup></a>,
-        <a href="https://engineering.purdue.edu/~bouman">Charles A. Bouman<sup>3</sup></a>,
-        <a href="https://www.math.purdue.edu/~buzzard">Gregery T. Buzzard<sup>4</sup></a>,
-        <a href="http://brendt.wohlberg.net">Brendt Wohlberg<sup>5</sup></a></br>
+        <a href="https://engineering.wustl.edu/faculty/Ulugbek-Kamilov.html"> Ulugbek S. Kamilov<sup>1</sup></a>,
+        <a href="https://engineering.purdue.edu/~bouman">Charles A. Bouman<sup>2</sup></a>,
+        <a href="https://www.math.purdue.edu/~buzzard">Gregery T. Buzzard<sup>3</sup></a>,
+        <a href="http://brendt.wohlberg.net">Brendt Wohlberg<sup>4</sup></a></br>
     </p>
     <p>
-        <a><sup>1</sup>Department of Computer Science & Engineering, Washington University in St.Louis, St. Louis, MO, USA</a></br>
-        <a><sup>2</sup>Department of Electrical & Systems Engineering, Washington University in St.Louis, St. Louis, MO, USA</a></br>
-        <a><sup>3</sup>Electrical & Computer Engineering, Purdue University, West Lafayette, IN, USA</a></br>
-        <a><sup>4</sup>Department of Mathematics, Purdue University, West Lafayette, IN, USA</a></br>
-        <a><sup>5</sup> Theoretical Division at Los Alamos National Laboratory, Los Alamos, NM, USA</a></br>
+        <a><sup>1</sup>Computational Imaging Group (CIG), Washington University in St.Louis, St. Louis, MO, USA</a></br>
+        <a><sup>2</sup>Electrical & Computer Engineering, Purdue University, West Lafayette, IN, USA</a></br>
+        <a><sup>3</sup>Department of Mathematics, Purdue University, West Lafayette, IN, USA</a></br>
+        <a><sup>4</sup> Theoretical Division at Los Alamos National Laboratory, Los Alamos, NM, USA</a></br>
     </p>
 
     <div class="btn-group" role="group" aria-label="Top menu">
@@ -57,7 +56,7 @@
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig2.jpg" style="width:85%" alt="Banner">
-                <p> Image priors for PnP can be obtained by training CNNs to remove AWGN from a set of images.</p>
+                <p><b>Figure 1:</b> Image priors for PnP can be obtained by training CNNs to remove AWGN from a set of images.</p>
             </div>
         </div>
 
@@ -70,12 +69,12 @@
     </div>
 
     <div class="section">
-        <h2>Relationship to Deep Unfolding</h2>
+        <h2>Deep Model-Based Architectures</h2>
         <hr>
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img style="width:90%" src="img/fig9.jpg" >
-                <p>The PnP framework is related to two other popular computational-imaging paradigms, deep unfolding (DU) and deep equilibrium models (DEQ). A PnP algorithm, such as PnP-ISTA or RED-SD, can be turned into a DU architecture by truncating the algorithm to a fixed number of iterations and training the weights of the CNN prior end-to-end. Similarly, a DEQ architecture can be obtained by running the PnP algorithm until convergence and using the implicit differentiation at the fixed point to train the weights. The CNN operator in DU/DEQ is not necessarily an AWGN denoiser, instead it is an artifact-removal (AR) operator trained to remove artifacts specific to the PnP iterations</p>
+                <p><b>Figure 2:</b> The PnP framework is related to two other popular computational-imaging paradigms, deep unfolding (DU) and deep equilibrium models (DEQ). A PnP algorithm, such as PnP-ISTA or RED-SD, can be turned into a DU architecture by truncating the algorithm to a fixed number of iterations and training the weights of the CNN prior end-to-end. Similarly, a DEQ architecture can be obtained by running the PnP algorithm until convergence and using the implicit differentiation at the fixed point to train the weights. The CNN operator in DU/DEQ is not necessarily an AWGN denoiser, instead it is an artifact-removal (AR) operator trained to remove artifacts specific to the PnP iterations</p>
             </div>
         </div>
     </div>
@@ -87,51 +86,31 @@
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig3.jpg" style="width:90%" alt="Banner">
-                <p> A single pre-trained CNN denoiser in PnP can address different super-resolution factors.</p>
+                <p><b>Figure 3:</b> A single pre-trained CNN denoiser in PnP can address different super-resolution factors.</p>
             </div>
         </div>
         
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig5.jpg" style="width:90%" alt="Banner">
-                <p>PnP algorithms explicitly separate the application of the forward model from that of the learned prior, enabling the adaptation of trained CNNs to new sensor configurations.  This is illustrated on experimentally collected 3D MRI data corresponding to 800 radial spokes (scans of about 2 minute).</p>
+                <p><b>Figure 4:</b> PnP algorithms explicitly separate the application of the forward model from that of the learned prior, enabling the adaptation of trained CNNs to new sensor configurations.  This is illustrated on experimentally collected 3D MRI data corresponding to 800 radial spokes (scans of about 2 minute). MCNUFFT refers to a simple inversion of the measurement operator without any regularization. DeCoLearn is a CNN that was trained under a mismatched sensor configuration corresponding to 1600 lines (scans of about 4 minutes). A variant of PnP called RARE is used to adapt DeCoLearn to the desired 800 line data. The results of the DeCoLearn reconstruction using all the available 2000 lines is shown as Reference. The numbers on the top-right corner correspond to the relative PSNR/SSIM values with respect to Reference. Note the ability of RARE to successfully adapt DeCoLearn to 800-line data.</p>
             </div>
         </div>
 
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
-                <img src="img/result_phase.png" style="width:95%" alt="Banner">
-                <p>An illustration of DeCoLearn reconstructed images across <i>different respiratory phase</i>.</p>
+                <img src="img/fig6.jpg" style="width:90%" alt="Banner">
+                <p><b>Figure 5:</b> Visual evaluation of color image recovery in compressive sensing from random projections with 20% subsampling. The results of total variation (TV) and a well-known deep unfolding (DU) architecture ISTA-Net+ are provided for reference. The methods PnP (denoising) and RED (denoising) use a pre-trained AWGN denoiser as an image prior. The method PnP (AR) uses a problem-dependent artifact-removal (AR) operator pre-trained using DU. Note that the choice of denoiser affects the reconstruction significantly (PSNR shown in white).</p>
             </div>
         </div>
 
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
-                <img src="img/result_slice.png" style="width:85%" alt="Banner">
-                <p>An illustration of DeCoLearn reconstructed images compared against several baseline methods.</p>
+                <img src="img/fig8.jpg" style="width:90%" alt="Banner">
+                <p><b>Figure 6:</b> Online PnP algorithms, such as SIMBA, can reduce the computational and memory complexity of PnP. Here, we show the reconstruction of a 3D algae sample from 89 experimentally collected intensity diffraction tomography (IDT) measurements (see four images on the left). SIMBA, which uses minibatches of size p = 10, is compared against RED-SD, which uses all b = 89 measurements at each iteration. Both algorithms use exactly the same measurement model and the same DnCNN AWGN denoiser. Note how the results of SIMBA are indistinguishable from RED-SD even though the per-iteration complexity of SIMBA is only a fraction of that of RED-SD.</p>
             </div>
         </div>
         
-    </div>
-
-    <div class="section">
-        <h2>Validation on Simulated Data</h2>
-        <div class="text-center">
-        <p>Check our <a href="https://github.com/wustl-cig/DeCoLearn"> GitHub </a> to generate the following results by yourself.</p>
-        </div>
-        <hr>
-
-        <div class="row align-items-center">
-			<div class="col justify-content-center text-center">
-                <img src="img/video_simulated_data.gif" style="width:100%" alt="Banner">
-            </div>
-        </div>
-
-        <div class="row align-items-center">
-			<div class="col justify-content-center text-center">
-                <img src="img/result_simulated_data.png" style="width:100%" alt="Banner">
-            </div>
-        </div>
     </div>
     
     <div class="section">
@@ -139,7 +118,7 @@
         <hr>
         <div>
             <div class="list-group">
-                <a href="https://arxiv.org/abs/2107.05533"
+                <a href="https://arxiv.org/abs/2203.17061"
                    class="list-group-item">
                     <img src="img/paper_thumbnail.png" style="width:100%; margin-right:-20px; margin-top:-10px;">
                 </a>
@@ -151,12 +130,12 @@
         <h2>Bibtex</h2>
         <hr>
         <div class="bibtexsection">
-            @article{gan2021deformation,
-                title={Deformation-Compensated Learning for 
-                    Image Reconstruction without Ground Truth},
-                author={Gan, Weijie and Sun, Yu and Eldeniz, Cihat 
-                    and Liu, Jiaming and An, Hongyu and Kamilov, Ulugbek S},
-                journal={IEEE Transactions on Medical Imaging},
+            @article{kamilov2022pnp,
+                title={Plug-and-Play Methods for Integrating Physical 
+                and Learned Models in Computational Imaging},
+                author={Kamilov, Ulugbek S and Bouman, Charles B and 
+                    Buzzard, Gregery T and Wohlberg, Brendt},
+                journal={IEEE Signal Process. Mag.},
                 year={2022}
               }
         </div>
@@ -165,7 +144,7 @@
     <hr>
 
    <footer>
-       <p>Acknoledgement: Web template from <a href="https://www.vincentsitzmann.com/siren/">SIREN</a> and <a href="https://wustl-cig.github.io/curewww">CURE</a></p>
+       <p>Acknoledgement: Web template of <a href="https://www.vincentsitzmann.com/siren/">SIREN</a></p>
    </footer>
 </div>
 
