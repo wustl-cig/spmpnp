@@ -27,7 +27,8 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
-    <h2>Plug-and-Play Methods for Integrating Physical and Learned Models in Computational Imaging</h2>
+    <h2>Plug-and-Play Methods for Integrating</h2> 
+    <h2>Physical and Learned Models in Computational Imaging</h2>
     <p class="abstract"><b>IEEE Signal Processing Magazine tutorial on Plug-and-Play Methods</b></p>
     <hr>
     <p class="authors">
@@ -74,7 +75,7 @@
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img style="width:90%" src="img/fig9.jpg" >
-                <p><b>Figure 2:</b> The PnP framework is related to two other popular computational-imaging paradigms, deep unfolding (DU) and deep equilibrium models (DEQ). A PnP algorithm, such as PnP-ISTA or RED-SD, can be turned into a DU architecture by truncating the algorithm to a fixed number of iterations and training the weights of the CNN prior end-to-end. Similarly, a DEQ architecture can be obtained by running the PnP algorithm until convergence and using the implicit differentiation at the fixed point to train the weights. The CNN operator in DU/DEQ is not necessarily an AWGN denoiser, instead it is an artifact-removal (AR) operator trained to remove artifacts specific to the PnP iterations</p>
+                <p style="text-align: justify;"><b>Figure 2:</b> The PnP framework is related to two other popular computational-imaging paradigms, deep unfolding (DU) and deep equilibrium models (DEQ). A PnP algorithm, such as PnP-ISTA or RED-SD, can be turned into a DU architecture by truncating the algorithm to a fixed number of iterations and training the weights of the CNN prior end-to-end. Similarly, a DEQ architecture can be obtained by running the PnP algorithm until convergence and using the implicit differentiation at the fixed point to train the weights. The CNN operator in DU/DEQ is not necessarily an AWGN denoiser, instead it is an artifact-removal (AR) operator trained to remove artifacts specific to the PnP iterations</p>
             </div>
         </div>
     </div>
@@ -93,21 +94,21 @@
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig5.jpg" style="width:90%" alt="Banner">
-                <p><b>Figure 4:</b> PnP algorithms explicitly separate the application of the forward model from that of the learned prior, enabling the adaptation of trained CNNs to new sensor configurations.  This is illustrated on experimentally collected 3D MRI data corresponding to 800 radial spokes (scans of about 2 minute). MCNUFFT refers to a simple inversion of the measurement operator without any regularization. DeCoLearn is a CNN that was trained under a mismatched sensor configuration corresponding to 1600 lines (scans of about 4 minutes). A variant of PnP called RARE is used to adapt DeCoLearn to the desired 800 line data. The results of the DeCoLearn reconstruction using all the available 2000 lines is shown as Reference. The numbers on the top-right corner correspond to the relative PSNR/SSIM values with respect to Reference. Note the ability of RARE to successfully adapt DeCoLearn to 800-line data.</p>
+                <p style="text-align: justify;"><b>Figure 4:</b> PnP algorithms explicitly separate the application of the forward model from that of the learned prior, enabling the adaptation of trained CNNs to new sensor configurations.  This is illustrated on experimentally collected 3D MRI data corresponding to 800 radial spokes (scans of about 2 minute). MCNUFFT refers to a simple inversion of the measurement operator without any regularization. DeCoLearn is a CNN that was trained under a mismatched sensor configuration corresponding to 1600 lines (scans of about 4 minutes). A variant of PnP called RARE is used to adapt DeCoLearn to the desired 800 line data. The results of the DeCoLearn reconstruction using all the available 2000 lines is shown as Reference. The numbers on the top-right corner correspond to the relative PSNR/SSIM values with respect to Reference. Note the ability of RARE to successfully adapt DeCoLearn to 800-line data.</p>
             </div>
         </div>
 
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig6.jpg" style="width:90%" alt="Banner">
-                <p><b>Figure 5:</b> Visual evaluation of color image recovery in compressive sensing from random projections with 20% subsampling. The results of total variation (TV) and a well-known deep unfolding (DU) architecture ISTA-Net+ are provided for reference. The methods PnP (denoising) and RED (denoising) use a pre-trained AWGN denoiser as an image prior. The method PnP (AR) uses a problem-dependent artifact-removal (AR) operator pre-trained using DU. Note that the choice of denoiser affects the reconstruction significantly (PSNR shown in white).</p>
+                <p style="text-align: justify;"><b>Figure 5:</b> Visual evaluation of color image recovery in compressive sensing from random projections with 20% subsampling. The results of total variation (TV) and a well-known deep unfolding (DU) architecture ISTA-Net+ are provided for reference. The methods PnP (denoising) and RED (denoising) use a pre-trained AWGN denoiser as an image prior. The method PnP (AR) uses a problem-dependent artifact-removal (AR) operator pre-trained using DU. Note that the choice of denoiser affects the reconstruction significantly (PSNR shown in white).</p>
             </div>
         </div>
 
         <div class="row align-items-center">
 			<div class="col justify-content-center text-center">
                 <img src="img/fig8.jpg" style="width:90%" alt="Banner">
-                <p><b>Figure 6:</b> Online PnP algorithms, such as SIMBA, can reduce the computational and memory complexity of PnP. Here, we show the reconstruction of a 3D algae sample from 89 experimentally collected intensity diffraction tomography (IDT) measurements (see four images on the left). SIMBA, which uses minibatches of size p = 10, is compared against RED-SD, which uses all b = 89 measurements at each iteration. Both algorithms use exactly the same measurement model and the same DnCNN AWGN denoiser. Note how the results of SIMBA are indistinguishable from RED-SD even though the per-iteration complexity of SIMBA is only a fraction of that of RED-SD.</p>
+                <p style="text-align: justify;"><b>Figure 6:</b> Online PnP algorithms, such as SIMBA, can reduce the computational and memory complexity of PnP. Here, we show the reconstruction of a 3D algae sample from 89 experimentally collected intensity diffraction tomography (IDT) measurements (see four images on the left). SIMBA, which uses minibatches of size p = 10, is compared against RED-SD, which uses all b = 89 measurements at each iteration. Both algorithms use exactly the same measurement model and the same DnCNN AWGN denoiser. Note how the results of SIMBA are indistinguishable from RED-SD even though the per-iteration complexity of SIMBA is only a fraction of that of RED-SD.</p>
             </div>
         </div>
         
@@ -131,10 +132,12 @@
         <hr>
         <div class="bibtexsection">
             @article{kamilov2022pnp,
-                title={Plug-and-Play Methods for Integrating Physical 
-                and Learned Models in Computational Imaging},
-                author={Kamilov, Ulugbek S and Bouman, Charles B and 
-                    Buzzard, Gregery T and Wohlberg, Brendt},
+                author={Kamilov, Ulugbek S 
+                    and Bouman, Charles B 
+                    and Buzzard, Gregery T 
+                    and Wohlberg, Brendt},
+                title={Plug-and-Play Methods for Integrating 
+                Physical and Learned Models in Computational Imaging},
                 journal={IEEE Signal Process. Mag.},
                 year={2022}
               }
